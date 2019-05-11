@@ -1,8 +1,5 @@
 #!/usr/bin/python3
-def square_matrix_simple(matrix=[]):
+def square_matrix_map(matrix=[]):
     new_matrix = matrix[:]
-    n = 0
-    for i in new_matrix:
-        new_matrix[n] = list(map(lambda x: x ** 2, i))
-        n += 1
+    new_matrix = list(map(lambda x: list(map(lambda y:y *2, x)), matrix))
     return new_matrix
