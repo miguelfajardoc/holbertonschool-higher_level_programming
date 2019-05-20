@@ -9,7 +9,8 @@ def eprint(*args, **kwargs):
 def safe_function(fct, *args):
     try:
         result = fct(*args)
-    except (ValueError, TypeError, IndexError, ZeroDivisionError, ArithmeticError) as error:
+    except (ValueError, TypeError, IndexError, ZeroDivisionError,
+            ArithmeticError) as error:
         eprint("Exception: {}".format(error))
         return (None)
     else:
