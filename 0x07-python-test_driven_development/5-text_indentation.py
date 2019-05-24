@@ -1,6 +1,14 @@
 #!/usr/bin/python3
+"""Module to indent text
+"""
+
+
 def text_indentation(text):
-    """a function that puts \n in every '.', '?', and ':'"""
+    """a function that puts \n in every '.', '?', and ':'
+
+    Args:
+        text (str): the string to indent
+    """
 
     if type(text) != str:
         raise TypeError("text must be a string")

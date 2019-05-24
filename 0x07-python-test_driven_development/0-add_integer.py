@@ -1,6 +1,16 @@
 #!/usr/bin/python3
+""" this modulo have a function that add two integers
+    you can test it with text file
+    in test/0-add_integer.txt
+"""
+
+
 def add_integer(a, b=98):
-    """Addition function of integers"""
+    """Addition function of integers
+    Args:
+         a (int)
+         b (int)
+    """
     z = [a, b]
     s = ['a', 'b']
 

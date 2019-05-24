@@ -1,5 +1,17 @@
+#!/usr/bin/python3
+"""function that divide the
+       numbers of a matrix
+    """
+
+
 def matrix_divided(matrix, div):
-    """function that divide the numbers of a matrix"""
+    """function that divide the
+       numbers of a matrix
+    Args:
+       matrix (list): that contain other list that contain integers or floats
+       div (int/float): divisor
+
+    """
 
     error = "matrix must be a matrix (list of lists) of integers/floats"
 
