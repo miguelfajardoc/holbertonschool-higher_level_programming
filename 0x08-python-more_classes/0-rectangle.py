@@ -1,7 +1,9 @@
 #!/usr/bin/python3
-"""Class square
+"""module class square
 
 """
 
+
 class Rectangle:
+    """class rectangle that do nothing"""
     pass
