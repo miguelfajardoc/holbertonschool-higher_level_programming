@@ -12,15 +12,12 @@ class Rectangle:
         height (int)
     """
     number_of_instances = 0
-    instance_cr = False
 
     def __init__(self, width=0, height=0):
         """The init function"""
-        Rectangle.instance_cr = False
+        Rectangle.number_of_instances += 1
         self.width = width
         self.height = height
-        Rectangle.number_of_instances +=1
-        Rectangle.instance_cr = True
 
     @property
     def width(self):
@@ -78,7 +75,6 @@ class Rectangle:
         return ("Rectangle(" + str(self.width) + ", " + str(self.height) + ")")
 
     def __del__(self):
-        if Rectangle.instance_cr != True:
-            """this function kill the object"""
-            print("Bye rectangle...")
-            Rectangle.number_of_instances -= 1
+        """this function kill the object"""
+        print("Bye rectangle...")
+        Rectangle.number_of_instances -= 1
