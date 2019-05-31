@@ -80,7 +80,7 @@ class Rectangle:
         if isinstance(rect_1, Rectangle) is False:
             raise TypeError("rect_1 must be an instance of Rectangle")
         if isinstance(rect_2, Rectangle) is False:
-            raise TypeError("rect_1 must be an instance of Rectangle")
+            raise TypeError("rect_2 must be an instance of Rectangle")
         maxarea = rect_1
         if rect_1.area() < rect_2.area():
             maxarea = rect_2
