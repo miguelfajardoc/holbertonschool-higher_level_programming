@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+from sys import argv
+
+
 def check_sol(list_s, queen, n):
     """check if the queen position is validate to the list_s"""
     cnt = 0
@@ -47,7 +50,7 @@ def generator(list_s, test_b, result, n):
         test_b[1] += 1
         return (test_b)
 
-from sys import argv
+
 list_s = []
 s = 0
 n = 0
@@ -68,10 +71,6 @@ if n < 4:
 while len(list_s) < n+1:
     queen = generator(list_s, queen, status, n)
     if queen == "exit":
-#        for i in solutions:
-#            s += 1
-#            print(i)
-#        print("solutions: {:d}".format(s))
         exit()
     if queen == 0:
         if len(solutions) != 0:
