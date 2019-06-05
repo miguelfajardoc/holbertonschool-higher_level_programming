@@ -6,8 +6,12 @@ class MyInt(int):
     """this is an rebel int"""
 
     def __ne__(self, other):
-        return super().__eq__(other)
+        if isinstance(other, int):
+            return super().__eq__(other)
+        return False
 
 
     def __eq__(self, other):
-        return super().__ne__(other)
+        if isinstance(other, int):
+            return super().__ne__(other)
+        return True
