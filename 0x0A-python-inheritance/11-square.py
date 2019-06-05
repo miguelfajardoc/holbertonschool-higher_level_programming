@@ -25,3 +25,18 @@ class Rectangle(BaseGeometry):
         BaseGeometry.integer_validator(self, "height", height)
         self.__width = width
         self.__height = height
+
+    def __str__(self):
+        return("[{}] {:d}/{:d}".format(self.__class__.__name__, self.__width,
+                                       self.__height))
+
+    def area(self):
+        return self.__width * self.__height
+
+
+class Square(Rectangle):
+    """class Square
+    """
+    def __init__(self, size):
+        Rectangle.__init__(self, size, size)
+        self.__size = size
