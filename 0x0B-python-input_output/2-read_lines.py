@@ -13,6 +13,6 @@ def read_lines(filename="", nb_lines=0):
                 if lines == nb_lines:
                     break
                 print(line, end="")
-                lines +=1
+                lines += 1
 
     return lines
