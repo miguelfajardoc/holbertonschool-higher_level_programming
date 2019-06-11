@@ -17,8 +17,13 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        dummy = Square()
-
+        args = []
+        if cls.__name__ == "Rectangle":
+            dummy = cls(1, 1)
+        else:
+            dummy = cls(1)
+        dummy.update(*args, **dictionary)
+        return dummy
     @staticmethod
     def from_json_string(json_string):
         """ bring the list representation of a json string"""
