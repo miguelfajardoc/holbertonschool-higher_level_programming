@@ -33,7 +33,7 @@ class Base:
     def save_to_file(cls, list_objs):
         """ class method to save a json in a file """
         new_list = []
-        if list_objs == None:
+        if list_objs is None:
             return new_list
         file_cls = cls.__name__ + ".json"
         with open(file_cls, mode='w', encoding='utf-8') as a_file:
