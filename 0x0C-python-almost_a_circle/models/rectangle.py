@@ -15,10 +15,56 @@ class Rectangle(Base):
         self.x = x
         self.y = y
 
+    def to_dictionary(self):
+        """ the dictionary for Rectangle """
+        new_dict = {}
+        new_dict['id'] = self.id
+        new_dict['width'] = self.width
+        new_dict['height'] = self.height
+        new_dict['x'] = self.x
+        new_dict['y'] = self.y
+        print("in origin: {}".format(new_dict))
+        return new_dict
+
+    def update(self, *args, **kwargs):
+        """ the update rectangle method """
+        for n in range(len(args)):
+            if n == 0:
+                Base.__init__(self, args[0])
+            elif n == 1:
+                self.width = args[n]
+            elif n == 2:
+                self.height = args[n]
+            elif n == 3:
+                self.x = args[n]
+            else:
+                self.y = args[n]
+
+        if not args:
+            for key, value in kwargs.items():
+                if key == "id":
+                    Base.__init__(self, value)
+                elif key == "width":
+                    self.width = value
+                elif key == "height":
+                    self.height = value
+                elif key == "x":
+                    self.x = value
+                else:
+                    self.y = value
+
+    def __str__(self):
+        """ modificate the str method """
+        return("[{}] ({:d}) {:d}/{:d} - {:d}/{:d}"
+              .format(self.__class__.__name__, self.id, self.x, self.y,
+                      self.width, self.height))
+
     def display(self):
         """display the rectangle with '#'"""
-        for i in range(self.__height):
-            print("#" * self.__width)
+        for e in range(self.y):
+            print()
+        for i in range(self.height):
+            print(" " * self.x + "#" * self.width)
 
     def area(self):
         """the area of the rectangle"""
