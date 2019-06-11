@@ -14,12 +14,10 @@ class Square(Rectangle):
     def to_dictionary(self):
         """ the dictionary for square"""
         new_dict = {}
-        new_dict = super().to_dictionary
-        print(new_dict)
-        new_dict[size] = new_dict['width']
-        del new_dict['width']
-        del new_dict['height']
-        print("in square:{}".format(new_dict))
+        new_dict = super().to_dictionary()
+        new_dict["size"] = new_dict["width"]
+        del new_dict["width"]
+        del new_dict["height"]
         return new_dict
 
     @property
@@ -37,6 +35,7 @@ class Square(Rectangle):
         """ put the string """
         return ("[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y,
                                                   self.width))
+
     def update(self, *args, **kwargs):
         """ the update square method """
 

@@ -23,7 +23,6 @@ class Rectangle(Base):
         new_dict['height'] = self.height
         new_dict['x'] = self.x
         new_dict['y'] = self.y
-        print("in origin: {}".format(new_dict))
         return new_dict
 
     def update(self, *args, **kwargs):
@@ -56,8 +55,8 @@ class Rectangle(Base):
     def __str__(self):
         """ modificate the str method """
         return("[{}] ({:d}) {:d}/{:d} - {:d}/{:d}"
-              .format(self.__class__.__name__, self.id, self.x, self.y,
-                      self.width, self.height))
+               .format(self.__class__.__name__, self.id, self.x, self.y,
+                       self.width, self.height))
 
     def display(self):
         """display the rectangle with '#'"""
