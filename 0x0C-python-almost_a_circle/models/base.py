@@ -15,6 +15,10 @@ class Base:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
 
+    @classmethod
+    def create(cls, **dictionary):
+        dummy = Square()
+
     @staticmethod
     def from_json_string(json_string):
         """ bring the list representation of a json string"""
@@ -33,10 +37,11 @@ class Base:
     def save_to_file(cls, list_objs):
         """ class method to save a json in a file """
         new_list = []
-        if list_objs is None:
-            return new_list
         file_cls = cls.__name__ + ".json"
         with open(file_cls, mode='w', encoding='utf-8') as a_file:
-            for obj in list_objs:
-                new_list.append(obj.to_dictionary())
+            if list_objs is None:
+                pass
+            else:
+                for obj in list_objs:
+                    new_list.append(obj.to_dictionary())
             a_file.write(Base.to_json_string(new_list))
