@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-""" square square ! """
+""" square square !
+
+"""
 from models.rectangle import Rectangle
 
 
