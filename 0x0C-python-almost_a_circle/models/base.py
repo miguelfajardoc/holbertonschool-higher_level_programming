@@ -2,6 +2,7 @@
 """ The base module"""
 import json
 import os.path
+import turtle
 
 
 class Base:
@@ -15,6 +16,40 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        window = turtle.Screen()
+        t = turtle.Turtle()
+
+        for r in list_rectangles:
+            t.penup()
+            t.color("green")
+            t.goto(r.x, r.y)
+            t.pendown()
+            t.forward(r.width)
+            t.left(90)
+            t.forward(r.height)
+            t.left(90)
+            t.forward(r.width)
+            t.left(90)
+            t.forward(r.height)
+            t.left(90)
+        for s in list_squares:
+            t.penup()
+            t.color("blue")
+            t.goto(s.x, s.y)
+            t.pendown()
+            t.forward(r.width)
+            t.left(90)
+            t.forward(r.height)
+            t.left(90)
+            t.forward(r.width)
+            t.left(90)
+            t.forward(r.height)
+            t.left(90)
+
+        window.exitonclick()
 
     @classmethod
     def load_from_file(cls):
