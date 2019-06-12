@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ The base module"""
 import json
-
+import os.path
 
 class Base:
     """ The base class """
@@ -16,7 +16,26 @@ class Base:
             self.id = Base.__nb_objects
 
     @classmethod
+    def load_from_file(cls):
+        """ load from a file """
+        name = cls.__name__ + ".json"
+        lists = []
+        if os.path.exists(name):
+            with open(name, encoding='utf-8') as fil:
+                lists = Base.from_json_string(fil.read())
+                new = []
+                for l in lists:
+                    if type(l) is dict:
+                        new.append(cls.create(**l))
+                    else:
+                        new.append(l)
+                return new
+        else:
+            return lists
+
+    @classmethod
     def create(cls, **dictionary):
+        """ create a new thing"""
         args = []
         if cls.__name__ == "Rectangle":
             dummy = cls(1, 1)
@@ -24,6 +43,7 @@ class Base:
             dummy = cls(1)
         dummy.update(*args, **dictionary)
         return dummy
+
     @staticmethod
     def from_json_string(json_string):
         """ bring the list representation of a json string"""
