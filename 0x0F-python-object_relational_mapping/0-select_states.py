@@ -13,3 +13,6 @@ if __name__ == "__main__":
     rows = course.fetchall()
     for i in rows:
         print(i)
+
+    course.close()
+    db.close
