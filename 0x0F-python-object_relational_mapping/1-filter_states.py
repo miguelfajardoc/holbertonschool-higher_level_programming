@@ -9,8 +9,8 @@ if __name__ == "__main__":
     db = MySQLdb.connect(host="localhost", port=3306, user=argv[1],
                          passwd=argv[2], db=argv[3])
     course = db.cursor()
-    course.execute("""SELECT * FROM states WHERE name REGEXP '^[N]' ORDER BY
-                   id ASC """)
+    course.execute("""SELECT * FROM states WHERE name REGEXP '^[N]'
+                   COLLATE latin1_general_cs ORDER BY id ASC """)
     rows = course.fetchall()
     for i in rows:
         print(i)
