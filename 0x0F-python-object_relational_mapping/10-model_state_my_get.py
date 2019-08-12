@@ -17,7 +17,7 @@ if __name__ == "__main__":
 
     session = Session()
 
-    search = session.query(State).filter(State.name==argv[4]).first()
+    search = session.query(State).filter(State.name == argv[4]).first()
     if search:
         print(search.id)
     else:
