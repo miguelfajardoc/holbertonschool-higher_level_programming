@@ -12,25 +12,25 @@ def find_peak(list_of_integers):
 
 def find_true_peak(lista, index):
     """ true function that find a peak """
-    if index is not 0 and index is not len(lista):
+    if index is not 0 and index is not len(lista) - 1:
         if lista[index] >= lista[index -
                                  1] and lista[index] >= lista[index + 1]:
             return (lista[index])
         elif lista[index - 1] >= lista[index + 1]:
-            index = index - int(index / 2)
+            index = index - int(min(len(lista) - index, index) / 2)
             return (find_true_peak(lista, index))
         else:
-            index = index + int(index / 2)
+            index = index + int(min(len(lista) - index, index) / 2)
             return (find_true_peak(lista, index))
     elif index is 0:
         if lista[index] >= lista[index + 1]:
             return (lista[index])
         else:
-            index = index + int(index / 2)
+            index = index + int(min(len(lista) - index, index) / 2)
             return (find_true_peak(lista, index))
     else:
         if lista[index] >= lista[index - 1]:
             return (lista[index])
         else:
-            index = index - int(index / 2)
+            index = index - int(min(len(lista) - index, index) / 2)
             return (find_true_peak(lista, index))
