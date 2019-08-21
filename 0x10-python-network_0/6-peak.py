@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """ find a peak """
-from time import sleep
 
 
 def find_peak(list_of_integers):
