@@ -15,7 +15,6 @@ def find_peak(list_of_integers):
 
 def find_true_peak(lista, index, mitad):
     """ true function that find a peak """
-    print("index {} mitad {}".format(index, mitad))
     if index is not 0 and index is not len(lista) - 1:
         if lista[index] >= lista[index -
                                  1] and lista[index] >= lista[index + 1]:
