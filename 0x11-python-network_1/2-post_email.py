@@ -4,8 +4,7 @@ if __name__ == "__main__":
     from urllib import request, parse
     from sys import argv
 
-
-    email = {'email' : argv[2]}
+    email = {'email': argv[2]}
     email = parse.urlencode(email)
     email = email.encode('ascii')
 
