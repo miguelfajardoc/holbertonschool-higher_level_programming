@@ -7,11 +7,11 @@ if __name__ == "__main__":
     try:
         data = {'q': argv[1]}
     except:
-        data = {'q': ''}
+        data = {'q': ""}
 
-    try:
         req = post("http://0.0.0.0:5000/search_user", data)
-        if req.json() == "":
+    try:
+        if len(req.json()) == 0:
             print("No result")
         else:
             print("[{}] {}".format(req.json()['id'], req.json()['name']))
