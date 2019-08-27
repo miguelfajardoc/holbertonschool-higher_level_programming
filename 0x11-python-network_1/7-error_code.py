@@ -6,6 +6,9 @@ if __name__ == "__main__":
 
     try:
         req = get(argv[1])
+        req.raise_for_status()
         print(req.text)
-    except HTTPError as e:
-        print("Error code: {}".format(e))
+
+    except:
+        if req.status_code >= 400:
+            print("Error code: {}".format(req.status_code))
