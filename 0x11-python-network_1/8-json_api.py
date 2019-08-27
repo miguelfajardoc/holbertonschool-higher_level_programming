@@ -8,9 +8,8 @@ if __name__ == "__main__":
         data = {'q': argv[1]}
     except:
         data = {'q': ""}
-
-        req = post("http://0.0.0.0:5000/search_user", data)
     try:
+        req = post("http://0.0.0.0:5000/search_user", data)
         if len(req.json()) == 0:
             print("No result")
         else:
