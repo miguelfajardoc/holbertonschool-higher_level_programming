@@ -6,7 +6,7 @@ if __name__ == "__main__":
 
     datas = {'search': argv[1]}
 
-    req = post("https://swapi.co/api/people",params=datas)
+    req = post("https://swapi.co/api/people", params=datas)
     print("Number of results: {}".format(req.json().get("count")))
     for item in req.json()["results"]:
         print(item["name"])
