@@ -3,7 +3,7 @@
 let x = Number(process.argv[2]);
 if (x) {
   while (x !== 0) {
-    if (x < 0) { return; }
+    if (x < 0) { break; }
     console.log('C is fun');
     x--;
   }
