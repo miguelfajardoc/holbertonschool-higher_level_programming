@@ -5,12 +5,12 @@ let y = x;
 let string = '';
 if (x) {
   while (x !== 0) {
-    if (x < 0){ break; }
-    while (y !== 0){
+    if (x < 0) { break; }
+    while (y !== 0) {
       string += 'X';
       y--;
-      }
-      console.log(string);
+    }
+    console.log(string);
     x--;
   }
 } else {
