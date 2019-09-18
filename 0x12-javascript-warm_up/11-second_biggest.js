@@ -1,7 +1,7 @@
 #!/usr/bin/node
 
 if (process.argv[2] === undefined || process.argv[3] === undefined) {
-  console.log(1);
+  console.log(0);
 } else {
   const l = process.argv;
   l.shift();
