@@ -2,12 +2,10 @@
 
 if (process.argv[2] === undefined || process.argv[3] === undefined) {
   console.log(1);
-}
-else {
-  let l = process.argv;
+} else {
+  const l = process.argv;
   l.shift();
   l.shift();
-  l.sort();
-  l.pop();
-  console.log(Math.max.apply(null, l));
+  l.sort(function (a, b) { return b - a; });
+  console.log(l[1]);
 }
