@@ -7,6 +7,6 @@ fs(path, function (error, response) {
   if (error) {
     console.log(error);
   } else {
-    console.log(response.statusCode);
+    console.log("Code: " + response.statusCode);
   }
 });
