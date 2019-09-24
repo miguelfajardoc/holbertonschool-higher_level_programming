@@ -2,7 +2,7 @@
 let x = 0;
 exports.logMe = function (item) {
   function counter () {
-    console.log(x + ':' + item);
+    console.log(x + ': ' + item);
     x++;
   }
   counter();
