@@ -9,16 +9,17 @@ class Rectangle {
       }
     }
   }
-  print() {
+
+  print () {
     let string = '';
     let i = 0;
     for (i = 0; i < this.width; i++) {
-      string +='X';
+      string += 'X';
     }
     for (i = 0; i < this.height; i++) {
       console.log(string);
     }
-  } 
+  }
 }
 
 module.exports = Rectangle;
